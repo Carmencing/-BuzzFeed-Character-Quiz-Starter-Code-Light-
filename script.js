@@ -26,11 +26,11 @@ function buzzfeedQuiz() {
   button.onclick = function() {
 
     // task 6: Declare user input variables for each of your questions. If you have three questions, you should have three variables. These variables should equal the value of the user input for each question.
-    let q1Response = q1.value;
-    let q2Response = q2.value;
-    let q3Response = q3.value;
-    let q4Response = q4.value;
-
+    let q1Response = q1.value.toLowerCase();
+    let q2Response = q2.value.toLowerCase();
+    let q3Response = q3.value.toLowerCase();
+    let q4Response = q4.value.toLowerCase();
+ console.log(q1Response);
     // task 7: create a conditional statement for the responses to Question 1 based on the user input.
     if (q1Response === "gummy bears") {
       userScore += 2;
@@ -88,21 +88,22 @@ function buzzfeedQuiz() {
 
    
     // task 11: create a conditional statement for the result to the quiz based on the total score. Using string interpolation, display these to the page: the result, an image that corresponds and a message to go with it.
+    displayResult.innerHTML = "You are "
     if (userScore <= 8) {
-      displayResult.innerHTML = "Togedemaru";
+      displayResult.insertAdjacentHTML('beforeend', "Togedemaru")
       displayResult.insertAdjacentHTML('beforeend', `<img src = ${togedemaruPic}>`)
     } else if (userScore >= 9 && userScore <= 13) {
-      displayResult.innerHTML = "Dedenne";
+      displayResult.insertAdjacentHTML('beforeend', "Dedenne")
       displayResult.insertAdjacentHTML('beforeend', `<img src = ${dedennePic}>`)
     } else if (userScore >= 14 && userScore <= 16) {
-      displayResult.innerHTML = "Pachirisu";
+      displayResult.insertAdjacentHTML('beforeend', "Pachirisu")
       displayResult.insertAdjacentHTML('beforeend', `<img src = ${pachirisuPic}>`)
     } else if (userScore >= 17 && userScore <= 19) {
-      displayResult.innerHTML = "Emolga";
+      displayResult.insertAdjacentHTML('beforeend', "Emolga")
       displayResult.insertAdjacentHTML('beforeend', `<img src = ${emolgaPic}>`)
     }
     else {
-      displayResult.innerHTML = "Morpeko";
+      displayResult.insertAdjacentHTML('beforeend', "Morpeko")
       displayResult.insertAdjacentHTML('beforeend', `<img src = ${morpekoPic}>`)
     }
  console.log(userScore);
